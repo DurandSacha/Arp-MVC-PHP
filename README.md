@@ -1,18 +1,15 @@
-# Welcome to the PHP MVC framework
+# Arp MVC PHP framework
 
-This is a simple MVC framework for building web Srclications in PHP. It's free and [open-source](LICENSE).
+Lightweight and simple framework for PHP developers [open-source](LICENSE).
 
-It was created for the [Write PHP like a pro: build an MVC framework from scratch](https://davehollingworth.net/phpmvcg) course. The course explains how the framework is put together, building it step-by-step, from scratch. If you've taken the course, then you'll already know how to use it. If not, please follow the instructions below.
+Arp exists to provide a lightweight architecture and framework, useful for small applications where large frameworks are not needed. Quickly start your application with Arp
 
-## Starting an Srclication using this framework
+## Start
 
-1. First, download the framework, either directly or by cloning the repo.
-1. Run **composer update** to install the project dependencies.
-1. Configure your web server to have the **public** folder as the web root.
-1. Open [Src/Config.php](Src/Config.php) and enter your database configuration data.
-1. Create routes, add controllers, views and models.
-
-See below for more details.
+1. Clone the project
+2. run **composer install** .
+3. Open [Src/Config.php](Src/Config.php) and enter your database configuration data.
+4. Create routes, add controllers, views and models.
 
 ## Configuration
 
@@ -57,34 +54,6 @@ Controller classes contain methods that are the actions. To create an action, ad
 
 You can access route parameters (for example the **id** parameter shown in the route examples above) in actions via the `$this->route_params` property.
 
-### Action filters
-
-Controllers can have **before** and **after** filter methods. These are methods that are called before and after **every** action method call in a controller. Useful for authentication for example, making sure that a user is logged in before letting them execute an action. Optionally add a **before filter** to a controller like this:
-
-```php
-/**
- * Before filter. Return false to stop the action from executing.
- *
- * @return void
- */
-protected function before()
-{
-}
-```
-
-To stop the originally called action from executing, return `false` from the before filter method. An **after filter** is added like this:
-
-```php
-/**
- * After filter.
- *
- * @return void
- */
-protected function after()
-{
-}
-```
-
 ## Views
 
 Views are used to display information (normally HTML). View files go in the `Src/Views` folder. Views can be in one of two formats: standard PHP, but with just enough PHP to show the data. No database access or anything like that should occur in a view file. You can render a standard PHP view in a controller, optionally passing in variables, like this:
@@ -119,10 +88,3 @@ $db = static::getDB();
 
 If the `SHOW_ERRORS` configuration setting is set to `true`, full error detail will be shown in the browser if an error or exception occurs. If it's set to `false`, a generic message will be shown using the [Src/Views/404.html](Src/Views/404.html) or [Src/Views/500.html](Src/Views/500.html) views, depending on the error.
 
-## Web server configuration
-
-Pretty URLs are enabled using web server rewrite rules. An [.htaccess](public/.htaccess) file is included in the `public` folder. Equivalent nginx configuration is in the [nginx-configuration.txt](nginx-configuration.txt) file.
-
----
-
-Signup for the course [here](https://davehollingworth.net/phpmvcg) and understand how this framework is built from scratch, putting it all together step by step.
