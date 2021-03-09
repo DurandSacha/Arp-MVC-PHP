@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Src\Models;
 
 use PDO;
 

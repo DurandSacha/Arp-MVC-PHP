@@ -1,0 +1,4 @@
+[09-Mar-2021 13:19:46 UTC] Uncaught exception: 'Exception' with message 'Controller class Src\Controllers\Home not found'
+Stack trace: #0 C:\Users\sacha\Desktop\Developpement\Site Web\Sacha\Arp\public\index.php(32): Core\Router->dispatch('')
+#1 {main}
+Thrown in 'C:\Users\sacha\Desktop\Developpement\Site Web\Sacha\Arp\Core\Router.php' on line 127

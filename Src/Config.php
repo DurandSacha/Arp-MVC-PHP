@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace Src;
 
 /**
- * Application configuration
+ * Srclication configuration
  *
  * PHP version 7.0
  */

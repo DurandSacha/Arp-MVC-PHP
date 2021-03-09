@@ -22,7 +22,7 @@ class View
     {
         extract($args, EXTR_SKIP);
 
-        $file = dirname(__DIR__) . "/App/Views/$view";  // relative to Core directory
+        $file = dirname(__DIR__) . "/Src/Views/$view";  // relative to Core directory
 
         if (is_readable($file)) {
             require $file;
@@ -44,7 +44,7 @@ class View
         static $twig = null;
 
         if ($twig === null) {
-            $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/App/Views');
+            $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/Src/Views');
             $twig = new \Twig\Environment($loader);
         }
 

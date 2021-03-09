@@ -32,16 +32,9 @@ class Router
      */
     public function add($route, $params = [])
     {
-        // Convert the route to a regular expression: escape forward slashes
         $route = preg_replace('/\//', '\\/', $route);
-
-        // Convert variables e.g. {controller}
         $route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-z-]+)', $route);
-
-        // Convert variables with custom regular expressions e.g. {id:\d+}
         $route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
-
-        // Add start and end delimiters, and case insensitive flag
         $route = '/^' . $route . '$/i';
 
         $this->routes[$route] = $params;
@@ -203,7 +196,7 @@ class Router
      */
     protected function getNamespace()
     {
-        $namespace = 'App\Controllers\\';
+        $namespace = 'Src\Controllers\\';
 
         if (array_key_exists('namespace', $this->params)) {
             $namespace .= $this->params['namespace'] . '\\';

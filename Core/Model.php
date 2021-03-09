@@ -3,7 +3,7 @@
 namespace Core;
 
 use PDO;
-use App\Config;
+use Src\Config;
 
 /**
  * Base model
@@ -32,4 +32,8 @@ abstract class Model
 
         return $db;
     }
+
+    /**
+     * You can listen other informations here
+     */
 }
